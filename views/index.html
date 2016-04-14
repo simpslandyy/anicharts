@@ -1,0 +1,76 @@
+<% include header.html %>
+
+<header class="hero-img">
+	<div class="container-fluid jumbotron center-container">
+		<div class="hero-text-container">
+			<h1><%= header %></h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+			<p> Up to date stats on this seasons hottest and coldest shows.</p>
+			<button type="button" class="btn btn-default btn-lg" id="header-button" href="#">[Prompt Here]</button>
+		</div>
+	</div>
+</header>
+
+<div class="navbar nav-custom navbar-static-top" data-spy="affix" data-offset-top="793">
+	<ul class="nav navbar-nav">
+		<li><a href="#"> Link </a></li>
+		<li><a href="#"> Link </a></li>
+		<li><a href="#"> Link </a></li>
+		<li><a href="#"> Link </a></li>
+		<li><a href="#"> Link </a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="#"> Anichart </a></li>
+		<li><a href="#"> Anilist </a></li>
+	</ul>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<h2> Some Sort of Title Here </h2>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<h3> now playing</h3>
+				<ul class="listings">
+				<% for(var i = 0; i < best.length; i++) { %>
+					<li>
+						<a href="/shows/<%= nowPlaying[i]['id'] %>">
+							<%= nowPlaying[i]['title_romaji'] %> 
+						</a>
+					</li>
+		    	<% } %>
+		    	<li> <a href="/listings/2016/spring"> More shows ... </a> </li>
+			    </ul>
+		</div>
+		<div class="col-md-4">
+			<h3> top <%= best.length %> hottest</h3>
+				<ul class="listings">
+				<% for(var i = 0; i < best.length; i++) { %>
+					<li>
+						<a href="/shows/<%= best[i]['id'] %>">
+							<%= best[i]['title_romaji'] %> 
+						</a>
+					</li>
+		    	<% } %>
+			    </ul>
+		</div>
+		<div class="col-md-4">
+			<h3> top <%= worst.length %> coldest</h3>
+				<ul class="listings">
+				<% for(var i = 0; i < worst.length; i++) { %>
+					<li>
+						<a href="/shows/<%= worst[i]['id'] %>">
+							<%= worst[i]['title_romaji'] %> 
+						</a>
+					</li>
+		    	<% } %>
+			    </ul>
+		</div>
+	</div>
+</div>
+
+  </div>
+</div>
+
+<% include footer.html %>
