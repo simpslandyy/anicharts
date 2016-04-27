@@ -1,59 +1,24 @@
-var util		   = require('util'),
-  	request		   = require('request'),
-  	Authentication	= require('./oauth'),
-  	credentials		= require('../helper').credentials,
-  	Promise			= require('promise');
+var Show    = require('../handlers/show'),
+	express	= require('express'),
+	parent = express.Router();
 
-var express = require('express'),
-	app		= express();
+var show = new Show();
 
-function Show() {
-	this.auth = new Authentication(credentials);
-	this.option = { auth : { 'bearer': null } };
+parent.get('/', function(req, res){
+	res.send('shows homepage');
+});
 
-}
-
-Show.prototype.getShow = function(id) {
-	self = this;
-	self.endpoint = util.format('anime/%s', id);
-	var query = util.format('%s%s', credentials.site, self.endpoint);
-
-	return new Promise(function(fulfill, reject){
-		self.auth
-			.setAccessToken()
-			.done(function(result){
-				self.option.auth.bearer = result.token.access_token;
-				request(query, self.option, function(err, res, body){
-					if (err) { reject(err) };
-					fulfill(body);
-				})
-			}, reject);
-	});
-};
-
-Show.prototype.getActors = function(id) {
-	self = this;
-	self.endpoint = util.format('anime/%s/actors', id);
-	var query = util.format('%s%s', credentials.site, self.endpoint);
-}
-
-Show.prototype.getCharacters = function(id) {
-	self = this;
-	self.endpoint = util.format('anime/%s/characters', id);
-	var query = util.format('%s%s', credentials.site, self.endpoint);
-}
-
-Show.prototype.getGenres = function(id) {
-	self = this;
-	self.endpoint = util.format('anime/%s', id);
-	var query = util.format('%s%s', credentials.site, self.endpoint);
-}
-
-Show.prototype.getNextAiring = function(id) {
-	self = this;
-	self.endpoint = util.format('anime/%s', id);
-	var query = util.format('%s%s', credentials.site, self.endpoint);
-}
+// match a show id 
+parent.get('/:id(\\d+)/', function(req, res){
+	show
+		.getShow(req.params.id)
+		.then(function(result){
+			res.send(result);
+		})
+		.catch(function(result){
+			res.render('error', {})
+		});
+});
 
 
-module.exports = Show;
+module.exports = parent;

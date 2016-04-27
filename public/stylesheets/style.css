@@ -7,6 +7,14 @@ a {
 	color: #00B7FF; 
 }
 
+.hideMe {
+	visibility: hidden;
+}
+
+.showMe {
+	display : none;
+}
+
 /* Sets the image to the full screen height, 
 	and allows content to be underneath when user starts to scroll*/
 header {
@@ -24,18 +32,22 @@ h3 {
 	text-transform: uppercase;
 }
 
-#header-button{
+hr.divider {
+	margin-top: 0;
+}
+
+hr#subtitle {
+	width: 60%;
+}
+
+#header-button {
 	margin-top: 15px;
 	border-radius: 23px;
 }
 
-.container-fluid {
-	position: absolute;
-}
-
 /* container storing hero image */
 .hero-img {
-	background: url('../images/hero3.jpg') no-repeat center fixed;
+	background: url('/images/hero3.jpg') no-repeat center fixed;
 	background-size: cover;
 }
 
@@ -43,6 +55,7 @@ h3 {
 .center-container {
 	top: 31%;
 	width: 100%;
+	position: absolute;
 }
 
 /* container for the text that is on top of the hero image*/
@@ -71,7 +84,7 @@ h3 {
 	font-size: 14px;
 	color: #000000;
 	background-color: #F8F8F0;
-	/*margin-bottom: 40px;*/
+	margin-bottom: 40px;
 }
 
 .nav-custom .navbar-nav > li {
@@ -104,7 +117,7 @@ h3 {
 }
 
 .row {
-    left: 137px;
+
     position: relative;
     margin-top: 10px;
     margin-bottom: 15px;
@@ -112,7 +125,6 @@ h3 {
 
 .listings {
 	list-style-type: none;
-	white-space: nowrap;
 }
 
 .listings li {
