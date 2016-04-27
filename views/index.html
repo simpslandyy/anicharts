@@ -1,7 +1,7 @@
 <% include header.html %>
 
-<header class="hero-img">
-	<div class="container-fluid jumbotron center-container">
+<header class="hero-img hideMe">
+	<div class="jumbotron center-container">
 		<div class="hero-text-container">
 			<h1><%= header %></h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -27,11 +27,10 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<h2> Some Sort of Title Here </h2>
-	</div>
-	<div class="row">
-		<div class="col-md-4">
-			<h3> now playing</h3>
+		<h2 class="hideMe"> Some Sort of Title Here </h2>
+		<div class="col-sm-4 col-md-4 col-lg-4 hideMe">
+			<h3> spring tv lineup </h3>
+			<hr class="divider" id="subtitle">
 				<ul class="listings">
 				<% for(var i = 0; i < best.length; i++) { %>
 					<li>
@@ -43,8 +42,9 @@
 		    	<li> <a href="/listings/2016/spring"> More shows ... </a> </li>
 			    </ul>
 		</div>
-		<div class="col-md-4">
+		<div class="col-sm-4 col-md-4 col-lg-4 hideMe">
 			<h3> top <%= best.length %> hottest</h3>
+			<hr class="divider" id="subtitle">
 				<ul class="listings">
 				<% for(var i = 0; i < best.length; i++) { %>
 					<li>
@@ -55,8 +55,9 @@
 		    	<% } %>
 			    </ul>
 		</div>
-		<div class="col-md-4">
+		<div class="col-sm-4 col-md-4 col-lg-4 hideMe">
 			<h3> top <%= worst.length %> coldest</h3>
+			<hr class="divider" id="subtitle">
 				<ul class="listings">
 				<% for(var i = 0; i < worst.length; i++) { %>
 					<li>
@@ -70,7 +71,5 @@
 	</div>
 </div>
 
-  </div>
-</div>
 
 <% include footer.html %>
