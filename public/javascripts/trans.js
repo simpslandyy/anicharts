@@ -15,12 +15,12 @@ function isVisible() {
 		elm = $(this).offset().top - $(window).scrollTop()
 
 		// within what threshold should the element be deemed "visible"
-		withinThreshold = $(window).height() - $(this).height();
+		withinThreshold = $(window).height() - 1/2*($(this).height());
 
 		// if the element is within threshold set to true, else false
-		isVisible =  elm < withinThreshold
+		visible =  elm < withinThreshold
 
-		if (isVisible == true) {
+		if (visible == true) {
 			$(this).removeClass('hideMe').addClass('showMe').fadeIn("slow");
 		}
 		
