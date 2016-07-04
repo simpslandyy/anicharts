@@ -117,10 +117,13 @@ hr#subtitle {
 }
 
 .row {
-
     position: relative;
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10%; 
+    margin-top: 50px;
+}
+
+.row:nth-child(even) {
+	background-color: #F8F8F0;
 }
 
 .listings {
@@ -143,3 +146,7 @@ hr#subtitle {
 	margin-bottom: 1px;
 }
 
+
+.search {
+	margin-top: 20px;
+}

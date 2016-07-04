@@ -97,27 +97,6 @@ Browse.prototype.getByPopularity = function(params) {
 }
 
 
-Browse.prototype.getByVideos = function(params) {
-var query = util.format('%s%s?year=%s&season=%s', credentials.site, self.endpoint, params.year, params.season);
-
-	return new Promise(function(fulfill, reject){
-		self.auth
-			.setAccessToken()
-			.done(function(result){
-				self.option.auth.bearer = result.token.access_token;
-				request(query, self.option, function(err, res, body){
-					if (err) { reject(err) };
-					var parse = JSON.parse(body);
-					var body = Model.limit(parse, 10);
-					fulfill(body);
-				})
-			}, reject)
-	})
-}
-
-// Browse.prototype.getLeastPopular = function(options){
-
-// }
 
 
 module.exports = Browse;
