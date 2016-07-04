@@ -2,16 +2,20 @@ var _ = require('underscore'),
 async = require('async');
 
 module.exports = {
-	limit: function (body, limit) {
-		return _.first(body, limit);
+	limit: function (entities, limit) {
+		return _.first(entities, limit);
 	},
-	filterBy: function(body, field) {
+	filterBy: function(entities, field) {
 		result = [];
-		async.eachSeries(body, function(series, next){
-			if (series[field] != null) {
-				result.push(series);
+		debugger;
+		async.eachSeries(entities, function(entity, next){
+			if (entity[field] != null) {
+				debugger;
+				result.push(entity);
 			}
 			next();
 		})	
+
+		return result;
 	}
 }

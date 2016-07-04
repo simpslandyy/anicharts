@@ -32,6 +32,8 @@ router.get('/', function(req, res, next) {
 	var topBest = browse.getByPopularity(best);
 	var topWorst = browse.getByPopularity(worst);
 
+	console.log(topWorst);
+
 	// When all the promises have returned, render the homepage
 	promises.push(topBest, topWorst, thisSeason);
 
@@ -43,7 +45,7 @@ router.get('/', function(req, res, next) {
 				header:'Title Here',
 				best: results[0],
 				worst: results[1],
-				nowPlaying: results[2]
+				nowPlaying: results[2],
 		});
 	});
 
