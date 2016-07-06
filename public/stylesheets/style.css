@@ -1,6 +1,7 @@
 body {
 	font-family: 'Alegreya Sans', sans-serif;
 	font-weight: 100;
+	overflow-x: hidden;
 }
 
 a { 
@@ -74,7 +75,7 @@ hr#subtitle {
 
 .jumbotron p {
 	font-size: 18px;
-	margin:0 auto;
+	margin: 0 auto;
 }
 
 /* --- navigation customization --- */
@@ -87,13 +88,31 @@ hr#subtitle {
 	margin-bottom: 40px;
 }
 
-.nav-custom .navbar-nav > li {
-	padding-right: 10px;
-}
-
 .navbar-right {
 	margin-right: 0;
 }
+
+.dropdown-toggle {
+	text-align: center;
+	font-size: 18px;
+}
+
+.dropdown-menu {
+	left: -25%;
+	min-width: 75%;
+	text-align: center;
+	border-radius: 9px;
+	padding: 0;
+}
+
+/* breaks drop down behaviour */
+/*
+.mobile-center {
+	position: relative;
+	left: 45%;
+	top: 16px;
+}*/
+
 
 /* position after passing data-offset-top, keeps navigation at the top */
 .affix {
@@ -118,7 +137,7 @@ hr#subtitle {
 
 .row {
     position: relative;
-    margin-bottom: 10%; 
+    margin-bottom: 50px; 
     margin-top: 50px;
 }
 
@@ -134,19 +153,20 @@ hr#subtitle {
 	margin-bottom: 4px;
 }
 
-/*.section {
-	width: 100%;
-	height: 710px;
-	margin-top: 10px;
-	background-color: #FFFFFF;
-}
-*/
 .text-container {
 	margin-left: 15px;
 	margin-bottom: 1px;
 }
 
 
+.input-group {
+	left: 35%;
+	max-width: 500px;
+}
+
 .search {
 	margin-top: 20px;
+	margin-bottom: 20px;
 }
+
+
