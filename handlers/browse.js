@@ -11,6 +11,20 @@ function Browse() {
 	this.endpoint = 'browse/anime';
 }
 
+// Broswe.prototype.search = function() {
+
+// 	var query = util.format('')
+
+// 	return new Promise(function(fulfill, reject) {
+// 		self.auth
+// 			.setAccessToken()
+// 			.done(function(result) {
+// 				self.option.auth.bearer = result.token.access_token;
+// 				request(query, )
+// 			})
+// 	})
+// }
+
 Browse.prototype.getYearlyQuarter = function(params) {
 	self = this;
 
@@ -33,8 +47,8 @@ Browse.prototype.getYearlyQuarter = function(params) {
 
 Browse.prototype.getYearly = function(params) {
 	self = this;
-
 	var query = util.format('%s%s?year=%s', credentials.site, self.endpoint, params.year);
+	console.log(query);
 
 	return new Promise(function(fulfill, reject){
 		self.auth
@@ -54,7 +68,7 @@ Browse.prototype.getYearly = function(params) {
 Browse.prototype.getSeasonal = function(params) {
 	self = this;
 
-	var query = util.format('%s%s?season=%s', credentials.site, self.endpoint, season);
+	var query = util.format('%s%s?season=%s', credentials.site, self.endpoint, params.season);
 
 	return new Promise(function(fulfill, reject){
 		self.auth

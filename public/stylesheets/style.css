@@ -95,24 +95,18 @@ hr#subtitle {
 .dropdown-toggle {
 	text-align: center;
 	font-size: 18px;
+	position: relative;
+	left: 45%;
+	top: 16px;
 }
 
 .dropdown-menu {
-	left: -25%;
+	left: 22%;
 	min-width: 75%;
 	text-align: center;
 	border-radius: 9px;
 	padding: 0;
 }
-
-/* breaks drop down behaviour */
-/*
-.mobile-center {
-	position: relative;
-	left: 45%;
-	top: 16px;
-}*/
-
 
 /* position after passing data-offset-top, keeps navigation at the top */
 .affix {

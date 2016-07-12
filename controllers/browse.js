@@ -18,8 +18,9 @@ parent.get('/', function(req, res){
 
 // match a year, must be 4 digits
 parent.get('/:year(\\d{4})/', function(req, res){
+	var params = {"year": req.params.year};
 	browse
-		.getYearly(req.params.year)
+		.getYearly(params)
 		.then(function(result){
 			res.send(result);
 		})
@@ -30,8 +31,9 @@ parent.get('/:year(\\d{4})/', function(req, res){
 
 // match a season (e.g. spring || winter || fall || summer)
 parent.get('/:season([a-zA-Z]+)/', function(req, res){
+	var params = {"season": req.params.season};
 	browse
-		.getSeasonal(req.params.season)
+		.getSeasonal(params)
 		.then(function(result){
 			res.send(result);
 		})
@@ -42,8 +44,9 @@ parent.get('/:season([a-zA-Z]+)/', function(req, res){
 
 // root of :season
 child.get('/', function(req, res){
+	var params = {"year": req.params.year, "season": req.params.season};
 	browse
-		.getYearlyQuarter(req.params.year, req.params.season)
+		.getYearlyQuarter(params)
 		.then(function(result){
 			res.send(result);
 		})

@@ -26,7 +26,7 @@ function showDropMenu() {
 	if (!$(".dropdown-toggle").length) {
 
 		// Add a dropdown button to the mobile menu
-		$("ul.mobile-nav").before("<a class='dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'> Collapsed <span class='caret'></span> </a>");
+		$("ul.mobile-nav").before("<a class='dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'> Navigation <span class='caret'></span> </a>");
 
 		// add the dropdown menu class to the mobile menu
 		$("ul.mobile-nav").toggleClass("dropdown-menu");

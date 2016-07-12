@@ -12,7 +12,6 @@
 </header>
 
 <div class="navbar nav-custom navbar-static-top" data-spy="affix" data-offset-top="800">
-	<div class="mobile-center">
 		<ul class="nav navbar-nav mobile-nav">
 			<li><a href="#"> Link </a></li>
 			<li><a href="#"> Link </a></li>
@@ -24,7 +23,7 @@
 			<li><a href="#"> Link </a></li>
 			<li><a href="#"> Link </a></li>
 		</ul>
-	</div>
+
 </div>
 
 <div class="container-fluid">
@@ -74,12 +73,14 @@
 	<div class="row">
 		<div class="search-container">
 			<div class="search">
-				<div class="input-group">
-		          <input type="text" class="form-control" placeholder="Search">
-					<span class="input-group-btn">
-		    			<button class="btn btn-default" type="button"> Go!</button>
-		  			</span>
-				</div>
+				<form action="/search" method="get">
+					<div class="input-group">
+			          <input type="text" class="form-control" placeholder="Search">
+						<span class="input-group-btn">
+			    			<button class="btn btn-default" type="button"> Go!</button>
+			  			</span>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

@@ -9,6 +9,7 @@ var routes = require('./controllers/index');
 var users = require('./controllers/users');
 var browse = require('./controllers/browse');
 var shows = require('./controllers/show');
+var search = require('./controllers/search');
 
 var app = express();
 
@@ -48,6 +49,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/listings', browse);
 app.use('/shows', shows);
+app.use('/search', search);
 
 
 // --- Middleware to catch and handle errors --- //

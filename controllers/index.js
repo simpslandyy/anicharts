@@ -45,7 +45,7 @@ router.get('/', function(req, res, next) {
 				header:'Title Here',
 				best: results[0],
 				worst: results[1],
-				nowPlaying: results[2],
+				nowPlaying: results[2]
 		});
 	});
 
